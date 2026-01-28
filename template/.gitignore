@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+pnpm-lock.yaml
+
+# Build outputs
+dist/
+.slidev/
+slides-export.pdf
+*.pdf
+*.pptx
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Environment
+.env
+.env.local

@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+dist/
+.slidev/
+*.pdf
+*.pptx
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Environment
+.env
+.env.local
+
+# Private presentations (keep these local or in separate private repo)
+Old Presentations/
+
+# Shared assets (except logos which are public)
+shared-assets/*
+!shared-assets/logos/
+!shared-assets/.gitkeep
