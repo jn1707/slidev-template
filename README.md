@@ -31,7 +31,7 @@ cp -r template "My New Presentation"
 cd "My New Presentation"
 
 # Copy logos or any other items frequeuntly used
-cp .-R ./shared-assets/logos ./public/logos
+cp -R ../shared-assets/logos ./public/logos
 
 # Install dependencies
 pnpm install
@@ -298,7 +298,7 @@ You can host a built Slidev presentation as a static site on GitHub Pages. Two c
 - **User/Organization Pages:** create a repository named `USERNAME.github.io` and push the built site to the `main` branch. The site will be served at `https://USERNAME.github.io/`.
 
 Notes:
-- If your slides are under a subpath (e.g. `https://jn1707.github.io/Talks/mcdata/`) set the Slidev `base` or build with the correct public base path so links resolve; check Slidev docs for `--base`/`--router-base` options or adjust the exported files accordingly.
+- If your slides are under a subpath (e.g. `https://USERNAME.github.io/REPO/subpath/`) set the Slidev `base` or build with the correct public base path so links resolve; check Slidev docs for `--base`/`--router-base` options or adjust the exported files accordingly.
 - For reproducible deploys, prefer the `gh-pages` package or a CI workflow that builds and deploys `dist/` (GitHub Actions).
 
 ### Workflow
@@ -487,4 +487,4 @@ pnpm add -D @slidev/plugin-katex
 
 For Slidev-specific issues: [GitHub Issues](https://github.com/slidevjs/slidev/issues)
 
-For this template setup: Contact Janni
+For this template setup: open an issue on the repository.

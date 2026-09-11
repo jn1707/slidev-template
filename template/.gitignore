@@ -1,6 +1,9 @@
 # Dependencies
 node_modules/
 .pnpm-store/
+
+# The template must never ship a lockfile: it would freeze every future deck
+# to today's Slidev. Derived decks keep their own lockfile. See CLAUDE.md section 7.
 pnpm-lock.yaml
 
 # Build outputs

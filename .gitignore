@@ -1,3 +1,36 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# PRIVACY: deny-by-default.
+#
+# The remote is PUBLIC and publishes the template and its tooling only. Every
+# presentation in this working directory stays private -- finished and already
+# public ones too. Nothing tracked here may carry a name, email, affiliation,
+# home path, or photo of a person. Personal defaults live in CLAUDE.local.md,
+# which is ignored below.
+#
+# Adding a deck to the allowlist PUBLISHES it. Don't. See CLAUDE.md section 1.
+# ─────────────────────────────────────────────────────────────────────────────
+
+/*
+
+# --- allowlist: the template and its tooling, nothing else ---------------------
+!/.gitignore
+!/README.md
+!/CLAUDE.md
+!/template/
+!/tools/
+
+# --- kept on disk, deliberately not tracked ------------------------------------
+# CLAUDE.local.md               real name, institution, email, style references
+# slide-library/                the user's own reusable slides
+# shared-assets/                duplicates template/public/logos/ byte for byte
+# VerticalSlides/               stale demo; current component ships in template/
+# Slidev Example Presentation/  upstream showcase, available from Slidev itself
+# Old Presentations/, <YYMMDD-*>/   every deck, private
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Applies inside the allowlisted directories too.
+# ─────────────────────────────────────────────────────────────────────────────
+
 # Dependencies
 node_modules/
 .pnpm-store/
@@ -12,18 +45,10 @@ dist/
 .DS_Store
 Thumbs.db
 
-# Editor
+# Editors / agent tooling
 .vscode/
 .idea/
 
 # Environment
 .env
 .env.local
-
-# Private presentations (keep these local or in separate private repo)
-Old Presentations/
-
-# Shared assets (except logos which are public)
-shared-assets/*
-!shared-assets/logos/
-!shared-assets/.gitkeep

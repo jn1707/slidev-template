@@ -1,0 +1,6 @@
+# pnpm 12 refuses to run a dependency's install scripts unless it is listed here.
+# Without playwright-chromium allowed, its browser never downloads and `pnpm export` fails.
+# (In pnpm 10/11 this setting was called `onlyBuiltDependencies`; `allowBuilds` replaces it.)
+allowBuilds:
+  esbuild: true
+  playwright-chromium: true

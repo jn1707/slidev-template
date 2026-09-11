@@ -25,21 +25,24 @@ pnpm export
 pnpm export --format pptx
 ```
 
-## Linking to Shared Assets
+## Bringing in images from elsewhere
 
-If you want to use logos or images from the shared assets folder or another presentation:
+Copy them in; do not symlink. Vite refuses to serve a `public/` symlink whose target sits
+outside the project root, so the images load in neither `pnpm dev` nor an export.
 
 ```bash
-# Symlink shared logos
-ln -s ../../shared-assets/logos ./public/logos
-
-# Symlink specific images from another presentation
-ln -s "../../Geneva presentation/public/images/icecube_detector.jpg" ./public/images/
-
-# Then reference in slides.md:
-# <img src="./logos/ku_logo.png" />
-# <img src="./images/icecube_detector.jpg" />
+cp -R ../shared-assets/logos ./public/logos
+cp "../<other-deck>/public/images/detector.jpg" ./public/images/
 ```
+
+Reference them with root-absolute paths, which resolve against `public/`:
+
+```html
+<img src="/logos/ku_logo.png" />
+<img src="/images/detector.jpg" />
+```
+
+A referenced image that is not on disk is a hard build failure, not a warning.
 
 ## Customization
 
@@ -52,8 +55,10 @@ ln -s "../../Geneva presentation/public/images/icecube_detector.jpg" ./public/im
 
 - `slides.md` - Main presentation file
 - `public/images/` - Your presentation images
-- `components/` - Custom Vue components
+- `public/logos/` - Institutional logos used on the title slide
+- `components/` - Custom Vue components, including `VerticalSlides.vue`
 - `package.json` - Dependencies and scripts
+- `pnpm-workspace.yaml` - Lets Playwright install its browser, required for `pnpm export`
 
 ## Notes
 

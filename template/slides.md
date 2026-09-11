@@ -1,10 +1,12 @@
 ---
-layout: cover
+layout: default
 class: text-left
 transition: fade-out
 dragPos:
   KU: 13,13,159,57
-  EU: 224,13,203,52
+  EU: 188,12,203,52
+  AIPHY: 865,2,118,83
+  IceCube: 815,9,57,66
 ---
 
 <div class="mt-16">
@@ -25,9 +27,10 @@ Subtitle or Brief Description
 
 </div>
 
-<!-- Add your logos here - uncomment and adjust paths as needed -->
-<!-- <img v-drag="'KU'" src="./logos/ku_logo.png"/> -->
-<!-- <img v-drag="'EU'" src="./logos/EU.png"/> -->
+<img v-drag="'KU'" src="/logos/ku_logo.png"/>
+<img v-drag="'EU'" src="/logos/EU.png"/>
+<img v-drag="'AIPHY'" src="/logos/AIPHY.svg"/>
+<img v-drag="'IceCube'" src="/logos/IceCube_vertical.png"/>
 
 <style>
 h1 {
@@ -85,7 +88,7 @@ Add your content here with supporting image
 
 <div style="display: flex; justify-content: center; align-items: center; margin-top: 2rem;">
   <img 
-    src="./images/your-image.png"
+    src="/images/your-image.png"
     alt="Description of your image"
     style="max-width: 90%; max-height: 400px; border-radius: 12px; box-shadow: 0 4px 24px rgba(139,0,0,0.10); object-fit: contain;"
   />
